@@ -20,11 +20,23 @@ namespace PasswordMgr.Controllers
         }
 
         // GET: Passwords
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> ShowPasswords()
         {
               return _context.Password != null ? 
                           View(await _context.Password.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Password'  is null.");
+        }
+
+        // GET: Search Form
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return View("ShowSearchForm");   
+        }
+
+        // GET: Search Results
+        public async Task<IActionResult> SearchResults(String SearchTerm)
+        {
+            return View();
         }
 
         // GET: Passwords/Details/5
