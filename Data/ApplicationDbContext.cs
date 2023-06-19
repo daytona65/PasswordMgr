@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PasswordMgr.Models;
 
 namespace PasswordMgr.Data
 {
@@ -9,5 +10,6 @@ namespace PasswordMgr.Data
             : base(options)
         {
         }
+        public DbSet<PasswordMgr.Models.Password>? Password { get; set; }
     }
 }
